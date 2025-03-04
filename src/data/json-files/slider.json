@@ -1,0 +1,26 @@
+[
+	{
+		"blockquote": "Reforzamiento",
+		"figcaption": "Escolar",
+		"cite": "Reserva tu clase, Ahora!",
+        "descripcion":"EXPERTOS EN NIVELACIÓN Y REFORZAMIENTO ESCOLAR",
+		"bg": "basic",
+        "bgPosition": ""
+	},
+	{
+		"blockquote": "Reforzamiento",
+		"figcaption": "Universitario",
+		"cite": "Reserva tu clase, Ahora!",
+        "descripcion":"En cuanto a nivel universitario brindamos cursos generales como matemática financiera, matemática para ingenieros, física universitaria, química universitaria",
+		"bg": "basic",
+        "bgPosition": ""
+	},
+    {
+		"blockquote": "Reforzamiento",
+		"figcaption": "Bachillerato",
+		"cite": "Reserva tu clase, Ahora!",
+        "descripcion":"Nuestro programa de apoyo, nivelación y refuerzo para Bachillerato busca lograr un aprendizaje completo y eficaz en las materias impartidas, de manera integral para cada alumno.",
+		"bg": "basic",
+        "bgPosition": ""
+	} 
+]

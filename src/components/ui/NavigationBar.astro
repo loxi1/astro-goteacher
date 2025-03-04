@@ -28,19 +28,14 @@ function isActivePath(currentPath: string): boolean {
 }
 
 // Type assertion for navActions to ensure type safety
-const savedNavActions = navActions.map((action) => ({
-	...action,
-	size: action.size as 'base' | 'lg' | 'sm',
-	style: action.style as 'primary' | 'secondary' | 'neutral'
-}))
 ---
 
-<header class="header">
+<header class="header border-b border-black">
 	<div class="header__container">
 		<nav aria-label="main navigation" role="navigation" class="header__nav">
 			<!-- Logo -->
 			<a href="/" class="header__logo">
-				<img src={logo.src} alt={logo.alt} width="48" height="48" />
+				<img src={logo.src} alt={logo.alt} width="30" height="30" />
 				<span>{logo.text}</span>
 			</a>
 
@@ -105,13 +100,7 @@ const savedNavActions = navActions.map((action) => ({
 
 			<!-- Navigation action buttons -->
 			<div class="header__actions">
-				{
-					savedNavActions.map((action) => (
-						<Button classes="flex-auto" size={action.size} style={action.style} modal="signup">
-							{action.name}
-						</Button>
-					))
-				}
+				
 			</div>
 		</nav>
 	</div>

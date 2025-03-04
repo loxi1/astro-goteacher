@@ -8,19 +8,26 @@ import Features from '../components/blocks/features/FeatureCards.astro'
 import Testimonial from '../components/blocks/testimonials/BasicDark.astro'
 import HighlightBlocks from '../components/blocks/highlights/HightlightRows.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
+import Carousel from '../components/blocks/carrusel/Carrusel'
 
 // Content
 // - Testimonial background
 import testimonialBackground from '../assets/testimonial-bg-01.webp'
 // - SEO
 const SEO = {
-	title: 'Foxi | Your Productivity Toolkit',
+	title: 'GoTeacher | Mejor enseñansa',
 	description:
-		'Foxi is a powerful productivity toolkit designed to enhance your workflow and boost your productivity. With features like analytics, security, and integrations, Foxi is the perfect solution for your business.'
+		'GoTeacher Somos un grupo de egresados de la Universidad Nacional de Ingeniería que nos dedicamos a la enseñanza de las matemáticas buscando el desarrollo personal y profesional, brindamos conocimientos básicos y avanzados, dirigidos a estudiantes Escolares y Universitarios..'
 }
+const images = [
+  'https://media.istockphoto.com/id/1051143636/vector/black-friday-sale-with-tag.jpg?s=1024x1024&w=is&k=20&c=12L2tg1hTI6r7ufEUZ6ktm3K3CMXHf60yBrb4LukbYQ=',
+    'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80',
+    'https://www.directv.com.pe/content/dam/public-sites/pe/2024/diciembre/LP-Prepago-Desk_1920x508.jpg',
+]
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
+	<Carousel images={images} client:load />
 	<Hero />
 	<Features />
 	<Testimonial bg={testimonialBackground} bgPosition="right" />
