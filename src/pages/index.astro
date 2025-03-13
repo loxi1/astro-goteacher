@@ -9,6 +9,7 @@ import Testimonial from '../components/blocks/testimonials/BasicDark.astro'
 import HighlightBlocks from '../components/blocks/highlights/HightlightRows.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
 import Carousel from '../components/blocks/carrusel/Carrusel'
+import Slider from '../components/blocks/carrusel/Slider.astro'
 
 // Content
 // - Testimonial background
@@ -24,10 +25,17 @@ const images = [
     'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80',
     'https://www.directv.com.pe/content/dam/public-sites/pe/2024/diciembre/LP-Prepago-Desk_1920x508.jpg',
 ]
+
+const img = [
+  '../assets/slider/slider-2.jpg',
+	'../assets/slider/slider_1.jpg',
+	'../assets/slider/slider_3.jpg',
+]
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
 	<Carousel images={images} client:load />
+	<Slider  />
 	<Hero />
 	<Features />
 	<Testimonial bg={testimonialBackground} bgPosition="right" />

@@ -1,0 +1,29 @@
+---
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+
+// Importamos los datos del carrusel
+import { carrusel } from '../../../data/json-files/data.js'
+---
+
+<Section id="carousel" mode="dark" classes="dark:border-t border-y border-neutral-800">
+  <Row>
+    <Col span="12">
+      <div class="relative w-full">
+        <div class="overflow-hidden relative h-64">
+          {carrusel.imagenes.map((item, index) => (
+            <div key={index} class="relative flex flex-col items-center justify-center text-center bg-black bg-opacity-50 p-6 h-64">
+              <img src={`../assets/slider/{item.image}`} zz={`{item.image}`} alt={item.titulo} class="absolute inset-0 w-full h-full object-cover opacity-60" />
+              <div class="relative z-10 text-white">
+                <h2 class="text-2xl font-bold">{item.titulo}</h2>
+                <h3 class="text-lg font-semibold">{item.subtitulo}</h3>
+                <p class="mt-2">{item.descripcion}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Col>
+  </Row>
+</Section>
