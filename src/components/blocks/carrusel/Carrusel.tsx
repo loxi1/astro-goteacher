@@ -6,12 +6,23 @@ const Carrusel: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const totalSlides = carrusel.imagenes.length;
 
+    const changeSlide = (newIndex: number) => {
+        if (!document.startViewTransition) {
+            setCurrentIndex(newIndex);
+            return;
+        }
+
+        document.startViewTransition(() => {
+            setCurrentIndex(newIndex);
+        });
+    };
+
     const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+        changeSlide((currentIndex + 1) % totalSlides);
     };
 
     const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides);
+        changeSlide((currentIndex - 1 + totalSlides) % totalSlides);
     };
 
     return (
@@ -27,7 +38,10 @@ const Carrusel: React.FC = () => {
                                         <p className="text-lg font-semibold md:text-xl lg:text-2xl">
                                             {item.titulo}
                                         </p>
-                                        <h1 className="font-familjenGrotesk text-4xl font-bold leading-none -tracking-[1px] sm:text-5xl md:text-7xl xl:text-8xl xxl:text-[130px]">
+                                        <h1 
+                                            className="font-familjenGrotesk text-4xl font-bold leading-none -tracking-[1px] sm:text-5xl md:text-7xl xl:text-8xl xxl:text-[130px]"
+                                            style={{ viewTransitionName: 'slide-title' }} 
+                                        >
                                             {item.subtitulo}
                                         </h1>
                                         <p className="para-lg my-[30px] md:mb-[50px]">
@@ -39,23 +53,24 @@ const Carrusel: React.FC = () => {
                                     <div className="relative right-0">
                                         <img 
                                             src={`/src/assets/slider/${item.image}`} 
-                                            data-image-url={`/src/assets/slider/${item.image}`} // 🔹 Atributo personalizado 
+                                            data-image-url={`/src/assets/slider/${item.image}`} 
                                             alt={item.titulo}
                                             width="762" 
                                             height="927" 
-                                            className="ml-auto" 
+                                            className="ml-auto"
+                                            style={{ viewTransitionName: 'slide-image' }} 
                                         />
                                         <img 
-                                            src="/src/assets/elementos/monitor.svg" 
-                                            data-image-url="/src/assets/elementos/monitor.svg" 
+                                            src={`/src/assets/elementos/${item.elemento1}`}
+                                            data-image-url={`/src/assets/elementos/${item.elemento1}`}
                                             alt="monitor" 
                                             width="125" 
                                             height="109" 
                                             className="absolute bottom-36 right-24 hidden sm:inline-block" 
                                         />
                                         <img 
-                                            src="/src/assets/elementos/shape-purple-blue-polygon-star.svg" 
-                                            data-image-url="/src/assets/elementos/shape-purple-blue-polygon-star.svg" // 
+                                            src={`/src/assets/elementos/${item.elemento2}`}
+                                            data-image-url={`/src/assets/elementos/${item.elemento2}`}
                                             alt="shape-purple-blue-polygon-star"
                                             width="317" 
                                             height="317" 
@@ -89,7 +104,7 @@ const Carrusel: React.FC = () => {
                     <button
                         key={index}
                         className={`w-3 h-3 rounded-full ${index === currentIndex ? 'bg-white' : 'bg-gray-400'}`}
-                        onClick={() => setCurrentIndex(index)}
+                        onClick={() => changeSlide(index)}
                     />
                 ))}
             </div>
