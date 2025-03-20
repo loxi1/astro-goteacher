@@ -37,7 +37,7 @@ export const footerNavigationData: FooterData = {
 	footerAbout: {
 		title: 'GoTeacher',
 		aboutText:
-			'Expertly made, responsive, accessible components in React and HTML ready to be used on your website or app. Just copy and paste them on your Tailwind CSS project.',
+			'Somos un grupo de estudio academico que nos dedicamos a la enseñanza de las matemáticas buscando el desarrollo personal de nuestros estudiantes, brindamos conocimientos básicos y avanzados, dirigidos a estudiantes escolares y universitarios.',
 		logo: {
 			src: '/logo.svg',
 			alt: 'The tailwind astro theme',
@@ -46,18 +46,18 @@ export const footerNavigationData: FooterData = {
 	},
 	footerColumns: [
 		{
-			category: 'Product',
+			category: 'Servicios',
 			subCategories: [
 				{
-					subCategory: 'Features',
+					subCategory: 'Escolar',
 					subCategoryLink: '/features'
 				},
 				{
-					subCategory: 'FAQ',
+					subCategory: 'Universitario',
 					subCategoryLink: '/faq'
 				},
 				{
-					subCategory: 'Pricing',
+					subCategory: 'Bachillerato',
 					subCategoryLink: '/pricing'
 				},
 				{
@@ -71,10 +71,10 @@ export const footerNavigationData: FooterData = {
 			]
 		},
 		{
-			category: 'About us',
+			category: 'Quienes somos',
 			subCategories: [
 				{
-					subCategory: 'About us',
+					subCategory: 'Nosotros',
 					subCategoryLink: '/'
 				},
 				{
@@ -88,10 +88,10 @@ export const footerNavigationData: FooterData = {
 			]
 		},
 		{
-			category: 'Get in touch',
+			category: 'Contacto',
 			subCategories: [
 				{
-					subCategory: 'Contact',
+					subCategory: 'Contactanos',
 					subCategoryLink: '/contact'
 				},
 				{

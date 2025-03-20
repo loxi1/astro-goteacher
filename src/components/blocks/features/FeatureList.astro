@@ -18,17 +18,15 @@ import features from '../../../data/json-files/featuresData.json'
 <Section id="features">
 	<Row>
 		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
-			<h2 class="text-pretty">Whats included on <strong>all</strong> foxi plans</h2>
+			<h2 class="text-pretty"><strong>GO Teacher</strong></h2>
 			<p class="pb-0 text-lg">
-				Explore the suite of tools designed to streamline your workflow, enhance productivity, and
-				drive growth. Each product is crafted with precision to meet your needs and exceed your
-				expectations.
+				Te puede ayudar en diferentes materias de Matemáticas y Ciencias:
 			</p>
 		</Col>
 	</Row>
 	<Row>
 		{
-			features.slice(0, 8).map((feature) => (
+			features.slice(0, 12).map((feature) => (
 				<Col span="3">
 					<Feature title={feature.title} icon={feature.icon} align="left" classes="mb-12">
 						{feature.description}

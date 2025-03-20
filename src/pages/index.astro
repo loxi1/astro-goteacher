@@ -9,7 +9,9 @@ import Testimonial from '../components/blocks/testimonials/BasicDark.astro'
 import HighlightBlocks from '../components/blocks/highlights/HightlightRows.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
 import Carousel from '../components/blocks/carrusel/Carrusel'
-import Slider from '../components/blocks/carrusel/Slider.astro'
+import Cursos from '../components/blocks/features/FeatureSticky.astro'
+import featuresData from '../data/json-files/featuresData.json'
+const cursos = featuresData.filter((feature) => feature.category === 'Cursos')
 
 // Content
 // - Testimonial background
@@ -35,10 +37,11 @@ const img = [
 
 <Layout title={SEO.title} description={SEO.description}>
 	<Carousel client:load />
-	<Slider client:load />
 	<Hero />
-	<Features />
-	<Testimonial bg={testimonialBackground} bgPosition="right" />
-	<HighlightBlocks />
-	<CTA />
+	<Features />	
+	<Cursos
+		title="GO Teacher"
+		text="Te puede ayudar en diferentes materias de Matemáticas y Ciencias:"
+		data={cursos}
+	/>
 </Layout>

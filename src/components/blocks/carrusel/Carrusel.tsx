@@ -25,6 +25,8 @@ const Carrusel: React.FC = () => {
         changeSlide((currentIndex - 1 + totalSlides) % totalSlides);
     };
 
+    const clasesvg = 'group-hover:ml-2 transition-transform duration-300 ease-in-out';  // 🔹 Clase dinámica
+
     return (
         <div className="relative w-full overflow-hidden">
             <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
@@ -44,9 +46,27 @@ const Carrusel: React.FC = () => {
                                         >
                                             {item.subtitulo}
                                         </h1>
-                                        <p className="para-lg my-[30px] md:mb-[50px]">
+                                        <p className="pb-0 text-lg">
                                             {item.descripcion}
                                         </p>
+                                        <div className="mt-6">
+                <a href="#" className="group text-white px-6 py-3 bg-red-500 hover:text-primary-50 hover:bg-red-600 rounded-lg text-lg font-semibold transition inline-flex items-center">
+                    Más información
+                    <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            className={`w-5 h-5 ml-1 ${clasesvg}`}  // 🔹 Permite recibir clases dinámicas
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="2" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+        >
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+                </a>
+            </div>
                                     </div>
 
                                     {/* Imágenes principales */}

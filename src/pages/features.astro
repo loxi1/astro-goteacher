@@ -11,6 +11,7 @@ import CTA from '../components/blocks/CTA/BasicDark.astro'
 import featuresData from '../data/json-files/featuresData.json'
 // - Feature Categories
 const featuresAnalytics = featuresData.filter((feature) => feature.category === 'Analytics')
+const cursos = featuresData.filter((feature) => feature.category === 'Cursos')
 const featuresProductivity = featuresData.filter((feature) => feature.category === 'Productivity')
 const featuresSecurity = featuresData.filter((feature) => feature.category === 'Security')
 const featuresIntegrations = featuresData.filter((feature) => feature.category === 'Integrations')
@@ -35,7 +36,7 @@ const header = {
 	<Feature
 		title="Insightful Analytics"
 		text="Delve into your data with precision and uncover actionable insights."
-		data={featuresAnalytics}
+		data={cursos}
 	/>
 	<Feature
 		title="Efficiency Unleashed"

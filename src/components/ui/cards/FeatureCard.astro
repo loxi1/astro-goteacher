@@ -16,15 +16,17 @@ import Card from './BasicCard.astro'
 // Props
 type Props = {
 	title?: string
+	negrita?: string
 	subtitle?: string
 	image?: any
 	link?: string
 }
-const { title , subtitle, image, link } = Astro.props
+const { title, negrita, subtitle, image, link } = Astro.props
 ---
 
 <Card
 	title={title}
+	negrita={negrita}
 	subtitle={subtitle}
 	titleSize="xl"
 	link={link}
