@@ -29,35 +29,58 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'xxl': '1536px',
+      },
       colors: {
         transparent: "transparent",
+        current: "currentColor",
+      
         primary: {
-          50: "#fdf2f8",
-          100: "#fce7f3",
-          200: "#fbcfe8",
-          300: "#f9a8d4",
-          400: "#f472b6",
-          500: "#E2187D",
-          600: "#db2777",
-          700: "#be185d",
-          800: "#9d174d",
-          900: "#831843",
-          950: "#500724",
+          50: "#e0f2ff",     // Azul más claro
+          100: "#b3e0ff",
+          200: "#80ccff",
+          300: "#4db8ff",
+          400: "#1aa3ff",
+          500: "#0099FF",     // Color base del logo/banner
+          600: "#008ae6",
+          700: "#007acc",
+          800: "#0066b3",
+          900: "#005299",
         },
+      
+        danger: {
+          500: "#E52421",     // Rojo del logo
+          600: "#C70000",
+        },
+      
+        warning: {
+          500: "#F68B1F",     // Naranja del logo
+          600: "#FF6F00",
+        },
+      
+        accent: {
+          500: "#FFC20E",     // Amarillo del logo
+          600: "#F9D423",
+        },
+      
         neutral: {
-          50: "#f8fafc",
-          100: "#f1f5f9",
-          200: "#e2e8f0",
-          300: "#cbd5e1",
-          400: "#94a3b8",
-          500: "#64748b",
-          600: "#475569",
-          700: "#334155",
-          800: "#1e293b",
-          900: "#0f172a",
-          950: "#020617",
-        },
-      },
+          50:  "#fdfdfd",  // casi blanco, ideal para fondos
+          100: "#f7f7f7",  // gris muy claro
+          200: "#e5e5e5",  // gris claro útil para bordes
+          300: "#d4d4d4",
+          400: "#a3a3a3",  // gris medio para texto secundario
+          500: "#737373",  // texto base neutro
+          600: "#525252",  // texto fuerte
+          700: "#404040",  // elementos oscuros (modo claro)
+          800: "#262626",  // modo oscuro principal
+          900: "#171717",  // casi negro (para contraste)
+          950: "#0a0a0a",  // fondo profundo oscuro
+        },       
+      
+        black: "#000000",
+        white: "#FFFFFF",
+      },      
       cursor: {
         fancy: "url(https://www.svgrepo.com/show/269/color-picker.svg)",
       },

@@ -3,133 +3,103 @@ import { carrusel } from '../../../data/json-files/data.js';
 import './style.css';
 
 const Carrusel: React.FC = () => {
-    const [currentIndex, setCurrentIndex] = useState<number>(0);
-    const totalSlides = carrusel.imagenes.length;
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const totalSlides = carrusel.imagenes.length;
 
-    const changeSlide = (newIndex: number) => {
-        if (!document.startViewTransition) {
-            setCurrentIndex(newIndex);
-            return;
-        }
+  const changeSlide = (newIndex: number) => {
+    if (!document.startViewTransition) {
+      setCurrentIndex(newIndex);
+      return;
+    }
 
-        document.startViewTransition(() => {
-            setCurrentIndex(newIndex);
-        });
-    };
+    document.startViewTransition(() => setCurrentIndex(newIndex));
+  };
 
-    const nextSlide = () => {
-        changeSlide((currentIndex + 1) % totalSlides);
-    };
+  const nextSlide = () => changeSlide((currentIndex + 1) % totalSlides);
+  const prevSlide = () => changeSlide((currentIndex - 1 + totalSlides) % totalSlides);
 
-    const prevSlide = () => {
-        changeSlide((currentIndex - 1 + totalSlides) % totalSlides);
-    };
+  const imagePath = (file: string, folder: string) => `/assets/${folder}/${file}`;
 
-    const clasesvg = 'group-hover:ml-2 transition-transform duration-300 ease-in-out';  // 🔹 Clase dinámica
+  return (
+    <div className="relative w-full overflow-hidden">
+      <div
+        className="flex w-full transition-transform duration-500 ease-in-out"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {carrusel.imagenes.map((item, index) => (
+            <section key={index} className="min-w-full flex-shrink-0 overflow-hidden">
+            <div className="container flex md:flex-row flex-col items-center">
+              <div className="relative lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+                <img className="object-cover object-center" alt="hero" src={imagePath(item.image, 'slider')} />
+                <img src={imagePath(item.elemento1, 'elementos')} alt="" className="absolute bottom-10 left-5 hidden sm:block w-20 h-20" />
+                <img src={imagePath(item.elemento2, 'elementos')} alt="" className="absolute right-0 bottom-1 -z-10 hidden sm:block w-40 h-40"/>
+              </div>
+              <div className="lg:flex-grow md:w-1/2 lg:pl-20 flex flex-col md:items-start md:text-left items-start text-left">
+                <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">{item.titulo}</h1>
+                <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-bold leading-tight mb-4">
+                  {item.subtitulo}
+                </h1>
+                <p className="mb-8 leading-relaxed text-sm sm:text-base md:text-lg max-w-[90vw] sm:max-w-[500px] md:max-w-none">
+                  {item.descripcion}
+                </p>
 
-    return (
-        <div className="relative w-full overflow-hidden">
-            <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-                {carrusel.imagenes.map((item, index) => (
-                    <section key={index} className="section-hero min-w-full flex-shrink-0">
-                        <div className="relative z-10">
-                            <div className="pb-20 lg:pb-0">
-                                <div className="ml-auto flex max-w-[1600px] flex-col items-center justify-between gap-10 px-10 lg:flex-row lg:pl-10 xl:px-0 xxl:gap-0">
-                                    {/* Texto */}
-                                    <div className="pt-[150px] text-center lg:max-w-lg lg:pb-[130px] lg:pt-[196px] lg:text-start xl:max-w-xl xxl:max-w-[746px]">
-                                        <p className="text-lg font-semibold md:text-xl lg:text-2xl">
-                                            {item.titulo}
-                                        </p>
-                                        <h1 
-                                            className="font-familjenGrotesk text-4xl font-bold leading-none -tracking-[1px] sm:text-5xl md:text-7xl xl:text-8xl xxl:text-[130px]"
-                                            style={{ viewTransitionName: 'slide-title' }} 
-                                        >
-                                            {item.subtitulo}
-                                        </h1>
-                                        <p className="pb-0 text-lg">
-                                            {item.descripcion}
-                                        </p>
-                                        <div className="mt-6">
-                <a href="#" className="group text-white px-6 py-3 bg-red-500 hover:text-primary-50 hover:bg-red-600 rounded-lg text-lg font-semibold transition inline-flex items-center">
+                <div className="flex justify-center">
+                <a
+                  href="#"
+                  className="text-white hover:text-white inline-flex items-center px-6 py-3 bg-red-500 rounded-lg hover:bg-red-600 transition"
+                >
                     Más información
-                    <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            className={`w-5 h-5 ml-1 ${clasesvg}`}  // 🔹 Permite recibir clases dinámicas
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="2" 
-            strokeLinecap="round" 
-            strokeLinejoin="round"
-        >
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-        </svg>
-                </a>
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    >
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
-                                    </div>
+          </section>  
+        ))}
+      </div>
 
-                                    {/* Imágenes principales */}
-                                    <div className="relative right-0">
-                                        <img 
-                                            src={`/src/assets/slider/${item.image}`} 
-                                            data-image-url={`/src/assets/slider/${item.image}`} 
-                                            alt={item.titulo}
-                                            width="762" 
-                                            height="927" 
-                                            className="ml-auto"
-                                            style={{ viewTransitionName: 'slide-image' }} 
-                                        />
-                                        <img 
-                                            src={`/src/assets/elementos/${item.elemento1}`}
-                                            data-image-url={`/src/assets/elementos/${item.elemento1}`}
-                                            alt="monitor" 
-                                            width="125" 
-                                            height="109" 
-                                            className="absolute bottom-36 right-24 hidden sm:inline-block" 
-                                        />
-                                        <img 
-                                            src={`/src/assets/elementos/${item.elemento2}`}
-                                            data-image-url={`/src/assets/elementos/${item.elemento2}`}
-                                            alt="shape-purple-blue-polygon-star"
-                                            width="317" 
-                                            height="317" 
-                                            className="absolute -left-24 bottom-14 -z-10" 
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                ))}
-            </div>
+      {/* Botones de navegación */}
+      <button
+        className="absolute top-1/2 left-2 -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full hover:bg-red-500 z-20"
+        onClick={prevSlide}
+      >
+        ◀
+      </button>
+      <button
+        className="absolute top-1/2 right-2 -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full hover:bg-red-500 z-20"
+        onClick={nextSlide}
+      >
+        ▶
+      </button>
 
-            {/* Botones de navegación */}
-            <button
-                className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700"
-                onClick={prevSlide}
-            >
-                ◀
-            </button>
-            <button
-                className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700"
-                onClick={nextSlide}
-            >
-                ▶
-            </button>
+      {/* Indicadores */}
+      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {carrusel.imagenes.map((_, index) => (
+          <button
+            key={index}
+            className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+              index === currentIndex ? 'bg-red-500 scale-125' : 'bg-gray-500'
+            }`}
+            onClick={() => changeSlide(index)}
+            type="button"
+          />
+        ))}
+      </div>
 
-            {/* Indicadores */}
-            <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                {carrusel.imagenes.map((_, index) => (
-                    <button
-                        key={index}
-                        className={`w-3 h-3 rounded-full ${index === currentIndex ? 'bg-white' : 'bg-gray-400'}`}
-                        onClick={() => changeSlide(index)}
-                    />
-                ))}
-            </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Carrusel;
