@@ -39,7 +39,7 @@ export const navigationBarData: NavData = {
 	},
 	navItems: [
 		{ name: 'Inicio', link: '/' },
-		{ name: 'Quienens somos', link: '/pricing' },
+		{ name: 'Quienens somos', link: '/nosotros' },
 		{
 			name: 'Nuestros servicios',
 			link: '#',
