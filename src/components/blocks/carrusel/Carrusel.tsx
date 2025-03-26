@@ -27,7 +27,7 @@ const Carrusel: React.FC = () => {
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {carrusel.imagenes.map((item, index) => (
-            <section key={index} className="w-full lg:h-[60vh] md:h-[60vh] flex-shrink-0 flex items-center justify-center overflow-hidden">
+            <section key={index} className="w-full lg:h-[80vh] md:h-[80vh] flex-shrink-0 flex items-center justify-center overflow-hidden">
             <div className="flex w-full h-full items-center justify-between">
           
               {/* Imagen izquierda */}

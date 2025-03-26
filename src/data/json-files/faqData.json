@@ -1,44 +1,50 @@
 [
 	{
-		"question": "What is the cost of the basic plan?",
-		"reply": "The basic plan is $9.99 per month, which includes access to core features and limited integrations. This plan is perfect for individuals or small teams looking to improve their productivity without a large investment.",
-		"category": "pricing",
+		"question": "Establecimiento de Objetivos Claros",
+		"reply": "Definir metas a corto y largo plazo para el aprendizaje individual y grupal.",
+		"description": "Evaluar el progreso regularmente para ajustar las estrategias de estudio.",
+		"category": "estrategia",
 		"open": true
 	},
 	{
-		"question": "Are there any discounts for annual subscriptions?",
-		"reply": "Yes, we offer a 20% discount on annual subscriptions for all our plans. By choosing an annual subscription, you can save money and ensure uninterrupted access to all Foxi features for the entire year.",
-		"category": "pricing",
-		"open": false
+		"question": "Sesiones de Estudio Estructuradas",
+		"reply": "Programar encuentros semanales con un enfoque en temas específicos.",
+		"description": "Alternar entre clases teóricas, resolución de problemas y prácticas interactivas.",
+		"category": "estrategia",
+		"open": true
 	},
 	{
-		"question": "Can I change my subscription plan at any time?",
-		"reply": "Yes, you can upgrade or downgrade your subscription plan at any time from your account settings. This flexibility allows you to adjust your plan based on your changing needs and usage.",
-		"category": "pricing",
-		"open": false
+		"question": "Uso de Recursos Diversos",
+		"reply": "Integrar materiales adicionales como libros, videos y aplicaciones educativas.",
+		"description": "Utilizar plataformas en línea para compartir recursos y ejercicios.",
+		"category": "estrategia",
+		"open": true
 	},
 	{
-		"question": "Is there a free trial available?",
-		"reply": "Yes, we offer a 14-day free trial for all new users. During the trial, you can explore all the features of Foxi without any commitment, allowing you to see how it fits into your workflow.",
-		"category": "pricing",
-		"open": false
+		"question": "Colaboración Activa",
+		"reply": "Fomentar la discusión y el intercambio de ideas durante las sesiones.",
+		"description": "Crear pequeños grupos de trabajo para abordar problemas difíciles.",
+		"category": "estrategia",
+		"open": true
 	},
 	{
-		"question": "Do you offer refunds?",
-		"reply": "We offer a 30-day money-back guarantee if you are not satisfied with our service. Simply contact our support team within 30 days of your purchase, and we'll process your refund.",
-		"category": "pricing",
-		"open": false
+		"question": "Evaluación y Retroalimentación",
+		"reply": "Realizar exámenes cortos o ejercicios de repaso para evaluar el progreso.",
+		"description": "Proveer retroalimentación constructiva entre los miembros del grupo.",
+		"category": "estrategia",
+		"open": true
 	},
 	{
-		"question": "How do I cancel my subscription?",
-		"reply": "You can cancel your subscription from your account settings at any time. After cancellation, you will still have access to your account until the end of the billing cycle.",
-		"category": "pricing",
-		"open": false
+		"question": "Fomento del Apoyo Emocional",
+		"reply": "Crear un ambiente en el que todos se sientan cómodos compartiendo sus dudas.",
+		"description": "Organizar actividades sociales para fortalecer la cohesión del grupo.",
+		"category": "estrategia",
+		"open": true
 	},
 	{
-		"question": "Can I use Foxi with Google Calendar?",
-		"reply": "Yes, Foxi integrates seamlessly with Google Calendar for easy scheduling and task management. This integration helps you keep track of your events and tasks in one place.",
-		"category": "integrations",
+		"question": "Invitación a Expertos",
+		"reply": "Invitar a profesores o tutores ocasionales para que compartan su experiencia y resuelvan dudas.",
+		"category": "estrategia",
 		"open": true
 	},
 	{
