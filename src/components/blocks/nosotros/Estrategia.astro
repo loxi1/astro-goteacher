@@ -34,7 +34,7 @@ const { title, text, data, type = 'left', classes } = Astro.props
 		{text && <p class="text-lg leading-relaxed">{text}</p>}
 	</header>
 
-	<Card classes="divide-y divide-neutral-100 dark:divide-neutral-800">
+	<Card classes="divide-y dark:divide-neutral-800">
 		{estrategias.map((faq: any) => <FAQ title={faq.question} desc={faq.description} text={faq.reply} open={faq.open} />)}
 	</Card>
 </StickySidebar>
