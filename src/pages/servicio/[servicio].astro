@@ -1,0 +1,16 @@
+---
+// - Layout
+import Layout from '../../layouts/Layout.astro'
+export function getStaticPaths() {
+  return [
+    {params: {servicio: 'escolar'}},
+    {params: {servicio: 'universitario'}},
+    {params: {servicio: 'bachillerato'}},
+  ];
+}
+
+const { servicio } = Astro.params;
+---
+<Layout title="Servicio" description="Servicio de transporte escolar, universitario y bachillerato">
+  <h1>{servicio}</h1>
+</Layout>
