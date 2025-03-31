@@ -1,6 +1,16 @@
 ---
-// - Layout
 import Layout from '../../layouts/Layout.astro'
+import Banner from '../../components/blocks/servicio/Banner.astro'
+import ListarServicio from '../../components/blocks/servicio/Servicio.astro'
+
+
+// - Page Header
+const header = {
+	title: '<strong>Nosotros</strong>.',
+	text: "Somos un grupo de egresados de la Universidad Nacional de Ingeniería que nos dedicamos a la enseñanza de las matemáticas buscando el desarrollo personal y profesional, brindamos conocimientos básicos y avanzados, dirigidos a estudiantes Escolares y Universitarios.",
+    texto: "Nuestros asesores son especialistas en cada materia de las matemáticas y transmiten sus conocimientos con facilidad para un mejor aprendizaje."
+}
+
 export function getStaticPaths() {
   return [
     {params: {servicio: 'escolar'}},
@@ -10,7 +20,20 @@ export function getStaticPaths() {
 }
 
 const { servicio } = Astro.params;
+
+
+// SEO
+// Ejemplo en Astro: archivo [servicio].astro
+
+const SEO = {
+  title: `Reforzamiento ${(servicio.toUpperCase())} | Clases Particulares Personalizadas`,
+  description: `Brindamos reforzamiento académico ${servicio === 'universitario' ? 'universitario con cursos como matemática financiera, física y química' : servicio === 'bachillerato' ? 'para bachillerato con enfoque integral en materias clave' : 'escolar para consolidar y fortalecer lo aprendido en clase'}. Ofrecemos clases particulares desde S/. 20.00 por hora, con docentes expertos que se adaptan a tus necesidades. Modalidad virtual o presencial.`,
+};
+
 ---
-<Layout title="Servicio" description="Servicio de transporte escolar, universitario y bachillerato">
-  <h1>{servicio}</h1>
+<Layout title={SEO.title} description={SEO.description}>
+  <section class="mx-auto max-w-screen-2xl px-4 md:px-8">
+    <Banner servicio={servicio} />
+    <ListarServicio servicio={servicio} />
+  </section>
 </Layout>

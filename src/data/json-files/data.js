@@ -8,7 +8,11 @@ export const carrusel = {
 			"image": "slider_1.png",
 			"image_2": "slider_r_1.png",
 			"elemento1": "elemento-colores.svg",
-			"elemento2": "elemento-estrella_.svg"
+			"elemento2": "elemento-estrella_.svg",
+			"categoria": "escolar",
+			"detalle_1": "escolar_1.jpeg",
+			"detalle_2": "escolar_2.jpeg",
+			"detalle_3": "escolar_3.jpeg"
 		},
 		{
 			"titulo": "Reforzamiento",
@@ -18,7 +22,11 @@ export const carrusel = {
 			"image": "slider_2.png",
 			"image_2": "slider_r_2.png",
 			"elemento1": "elemento-llave.svg",
-			"elemento2": "elemento-plligono-1.svg"
+			"elemento2": "elemento-plligono-1.svg",
+			"categoria": "universitario",
+			"detalle_1": "escolar_1.jpeg",
+			"detalle_2": "escolar_2.jpeg",
+			"detalle_3": "escolar_3.jpeg"
 		},
 		{
 			"titulo": "Reforzamiento",
@@ -28,7 +36,11 @@ export const carrusel = {
 			"image": "slider_3.png",
 			"image_2": "slider_r_3.png",
 			"elemento1": "elemento-poligonal.svg",
-			"elemento2": "element-light-lime-curve-arrow-2.svg"
+			"elemento2": "element-light-lime-curve-arrow-2.svg",
+			"categoria": "bachillerato",
+			"detalle_1": "escolar_1.jpeg",
+			"detalle_2": "escolar_2.jpeg",
+			"detalle_3": "escolar_3.jpeg"
 		} 
 	]
 }

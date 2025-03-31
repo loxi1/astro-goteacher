@@ -46,7 +46,7 @@ const Carrusel: React.FC = () => {
                 <img
                   src={imagePath(item.elemento2, 'elementos')}
                   alt=""
-                  className="absolute top-10 right-2 hidden sm:block w-24 h-24 -z-10"
+                  className="absolute top-10 -left-5 hidden sm:block w-24 h-24 -z-10"
                 />
               </div>
           
@@ -54,9 +54,9 @@ const Carrusel: React.FC = () => {
               <div className="md:w-1/3 lg:w-1/3 sm:w-1/2 px-6 flex flex-col items-start justify-center text-left space-y-4 h-full">
                 <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900">{item.titulo}</h1>
                 <h2 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-tight text-gray-800">
-                  {item.subtitulo}
+                  <span className="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">{item.subtitulo}</span>
                 </h2>
-                <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700">
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 dark:text-white">
                   {item.descripcion}
                 </p>
                 <a
@@ -78,6 +78,12 @@ const Carrusel: React.FC = () => {
                     <polyline points="12 5 19 12 12 19" />
                   </svg>
                 </a>
+                <a
+                    href="#reserva"
+                    className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition shadow-md"
+                  >
+                    Reserva tu clase ahora
+                  </a>
               </div>
           
               {/* Imagen derecha */}
@@ -109,28 +115,33 @@ const Carrusel: React.FC = () => {
       {/* Botones de navegación */}
       <button
         className="absolute top-1/2 left-2 -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full hover:bg-red-500 z-20"
+        aria-label='Anerior imagen'
         onClick={prevSlide}
       >
         ◀
       </button>
       <button
         className="absolute top-1/2 right-2 -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full hover:bg-red-500 z-20"
+        aria-label='Siguiente imagen'
         onClick={nextSlide}
       >
         ▶
       </button>
 
       {/* Indicadores */}
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
         {carrusel.imagenes.map((_, index) => (
           <button
-            key={index}
-            className={`sm:w-6 sm:h-6 w-6 h-6 rounded-full transition-colors duration-300 ${
-              index === currentIndex ? 'bg-primary-500 scale-125' : 'bg-neutral-500'
-            }`}
-            onClick={() => changeSlide(index)}
-            type="button"
-          />
+          key={index}
+          className={`sm:w-4 sm:h-4 w-3.5 h-3.5 rounded-full ring-1 ring-white shadow-md transition-all duration-300 ${
+            index === currentIndex
+              ? 'bg-primary-500 scale-125'
+              : 'bg-neutral-400 hover:bg-neutral-500'
+          }`}          
+          onClick={() => changeSlide(index)}
+          type="button"
+        />
+        
         ))}
       </div>
 

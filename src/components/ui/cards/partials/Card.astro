@@ -27,6 +27,8 @@ const { link, classes } = Astro.props
 }
 <style>
 	.card {
-		@apply flex flex-col overflow-hidden rounded border border-neutral-100 bg-white text-neutral-500 shadow-lg shadow-neutral-700/5 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-neutral-950/50;
+		@apply flex flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white text-neutral-800 shadow-md shadow-neutral-300/50 
+		dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:shadow-black/30 
+		transition-colors duration-300 hover:border-primary-400 hover:shadow-lg hover:shadow-primary-100/50 dark:hover:shadow-primary-500/30;
 	}
 </style>

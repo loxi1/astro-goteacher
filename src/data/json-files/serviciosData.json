@@ -1,0 +1,121 @@
+[
+	{
+		"titulo": "Algebra",
+		"servicio": "escolar",
+		"sylabus": "algebra.pdf",
+		"img": "algebra.jpg",
+		"orden": 1
+	},
+	{
+		"titulo": "Aritemetica",
+		"servicio": "escolar",
+		"sylabus": "aritemetica.pdf",
+		"img": "aritmetica.jpg",
+		"orden": 2
+	},
+	{
+		"titulo": "Fisica",
+		"servicio": "escolar",
+		"sylabus": "fisica.pdf",
+		"img": "fisica.jpg",
+		"orden": 3
+	},
+	{
+		"titulo": "Geometria",
+		"servicio": "escolar",
+		"sylabus": "geometria.pdf",
+		"img": "geometria.jpg",
+		"orden": 4
+	},
+	{
+		"quimica": "Quimica",
+		"servicio": "escolar",
+		"sylabus": "quimica.pdf",
+		"img": "quimica.jpg",
+		"orden": 5
+	},
+	{
+		"titulo": "Razonamiento Matematico",
+		"servicio": "escolar",
+		"sylabus": "razonamiento-matematico.pdf",
+		"img": "razonamiento-matematico.jpg",
+		"orden": 6
+	},
+	{
+		"titulo": "Trigonometria",
+		"servicio": "escolar",
+		"sylabus": "trigonometria.pdf",
+		"img": "trigonometria.jpg",
+		"orden": 7
+	},
+	{
+		"titulo": "Bachillerato",
+		"servicio": "bachillerato",
+		"sylabus": "calculo-I.pdf",
+		"img": "bachillerato.jpg",
+		"orden": 1
+	},
+	{
+		"titulo": "Escolar",
+		"servicio": "bachillerato",
+		"sylabus": "calculo-II.pdf",
+		"img": "escolar.jpg",
+		"orden": 2
+	},
+	{
+		"titulo": "Univarsitario",
+		"servicio": "bachillerato",
+		"sylabus": "matematica-basica.pdf",
+		"img": "universitario.jpg",
+		"orden": 3
+	},
+	{
+		"titulo": "Calculo I",
+		"servicio": "universitario",
+		"sylabus": "calculo-I.pdf",
+		"img": "calculo-I.jpg",
+		"orden": 1
+	},
+	{
+		"titulo": "Calculo II",
+		"servicio": "universitario",
+		"sylabus": "calculo-II.pdf",
+		"img": "calculo-II.jpg",
+		"orden": 2
+	},
+	{
+		"titulo": "Calculo III",
+		"servicio": "universitario",
+		"sylabus": "calculo-III.pdf",
+		"img": "calculo-III.jpg",
+		"orden": 3
+	},
+	{
+		"titulo": "Calculo IV",
+		"servicio": "universitario",
+		"sylabus": "calculo-IV.pdf",
+		"img": "calculo-IV.jpg",
+		"orden": 4
+	},
+	{
+		"titulo": "Estadistica Inferencial",
+		"servicio": "universitario",
+		"sylabus": "estadistica-inferencial.pdf",
+		"img": "estadistica-inferencial.jpg",
+		"orden": 5
+	},
+	{
+		"titulo": "Estadistica Descriptiva",
+		"servicio": "universitario",
+		"sylabus": "estadistica-y-probabilidades.pdf",
+		"img": "estadistica-descriptiva.jpg",
+		"orden": 6
+	},
+	{
+		"titulo": "Matematica Basica",
+		"servicio": "universitario",
+		"sylabus": "matematica-basica.pdf",
+		"img": "matematica-basica.jpg",
+		"orden": 7
+	}
+]

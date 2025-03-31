@@ -25,7 +25,7 @@ type Props = {
 	type?: 'left' | 'right'
 	classes?: string
 }
-const { title, text, data, type = 'left', classes } = Astro.props
+const { title, text, type = 'left', classes } = Astro.props
 ---
 
 <StickySidebar classes={classes} type={type}>

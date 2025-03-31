@@ -16,17 +16,6 @@ const SEO = {
 	description:
 		'GoTeacher Somos un grupo de egresados de la Universidad Nacional de Ingeniería que nos dedicamos a la enseñanza de las matemáticas buscando el desarrollo personal y profesional, brindamos conocimientos básicos y avanzados, dirigidos a estudiantes Escolares y Universitarios..'
 }
-const images = [
-  'https://media.istockphoto.com/id/1051143636/vector/black-friday-sale-with-tag.jpg?s=1024x1024&w=is&k=20&c=12L2tg1hTI6r7ufEUZ6ktm3K3CMXHf60yBrb4LukbYQ=',
-    'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80',
-    'https://www.directv.com.pe/content/dam/public-sites/pe/2024/diciembre/LP-Prepago-Desk_1920x508.jpg',
-]
-
-const img = [
-  '../assets/slider/slider-2.jpg',
-	'../assets/slider/slider_1.jpg',
-	'../assets/slider/slider_3.jpg',
-]
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
@@ -38,4 +27,13 @@ const img = [
 		text="Te puede ayudar en diferentes materias de Matemáticas y Ciencias:"
 		data={cursos}
 	/>
+	<div class="text-center mt-10">
+		<button
+		  type="button"
+		  class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition"
+		  data-modal-open="signup"
+		>
+		  Reserva tu clase ahora
+		</button>
+	  </div> 
 </Layout>

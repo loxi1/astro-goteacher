@@ -50,23 +50,15 @@ export const footerNavigationData: FooterData = {
 			subCategories: [
 				{
 					subCategory: 'Escolar',
-					subCategoryLink: '/features'
+					subCategoryLink: '/servicio/escolar'
 				},
 				{
 					subCategory: 'Universitario',
-					subCategoryLink: '/faq'
+					subCategoryLink: '/servicio/universitario'
 				},
 				{
 					subCategory: 'Bachillerato',
-					subCategoryLink: '/pricing'
-				},
-				{
-					subCategory: 'Changelog',
-					subCategoryLink: '/changelog'
-				},
-				{
-					subCategory: 'Terms',
-					subCategoryLink: '/terms'
+					subCategoryLink: '/sevicio/bachillerato'
 				}
 			]
 		},
@@ -76,18 +68,10 @@ export const footerNavigationData: FooterData = {
 				{
 					subCategory: 'Nosotros',
 					subCategoryLink: '/'
-				},
-				{
-					subCategory: 'News',
-					subCategoryLink: '/blog'
-				},
-				{
-					subCategory: 'Careers',
-					subCategoryLink: '/blog'
 				}
 			]
-		},
-		{
+		}
+		/*,{
 			category: 'Contacto',
 			subCategories: [
 				{
@@ -103,7 +87,7 @@ export const footerNavigationData: FooterData = {
 					subCategoryLink: '/contact'
 				}
 			]
-		}
+		}*/
 	],
 	subFooter: {
 		copywriteText: '© GoTeacher 2025.'

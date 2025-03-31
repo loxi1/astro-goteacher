@@ -1,0 +1,62 @@
+---
+import {carrusel} from '../../../data/json-files/data.js'
+
+// Props
+type Props = {
+	servicio: string
+}
+const { servicio } = Astro.props
+
+// Validar que `servicio` exista
+if (!servicio) {
+  throw new Error('El parámetro "servicio" es requerido en Banner.astro');
+}
+
+const elementosFiltrados = carrusel.imagenes.filter(item => item.categoria === servicio)
+const dataServicio = elementosFiltrados[0] || {} // fallback vacío para evitar error si no hay match
+
+const imagePath = (file: string, folder: string) => `/assets/servicios/${folder}/${file}`;
+---
+<div class="mb-4 flex flex-wrap justify-between md:mb-4 items-center">
+    <!-- Texto a la izquierda -->
+    <div class="mb-6 flex w-full flex-col justify-center sm:mb-12 lg:mb-0 lg:w-1/3 lg:pb-10 lg:pt-24">
+      <h1 class="mb-4 text-4xl font-bold text-black sm:text-5xl md:mb-6 md:text-6xl">Reforzamiento<br /><span class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">{dataServicio.subtitulo}</span></h1>
+
+      <p class="max-w-md leading-relaxed text-gray-500 xl:text-lg">
+        {dataServicio.descripcion}
+      </p>
+    </div>
+
+    <!-- Galería de imágenes -->
+    <div class="relative flex w-full justify-center gap-6 lg:w-2/3">
+      <!-- Imagen izquierda (levemente desplazada hacia abajo y atrás) -->
+      <div class="relative top-6 z-10 -translate-x-4 scale-[0.95] overflow-hidden rounded-xl bg-gray-100 shadow-md">
+        <img
+            src={imagePath(dataServicio.detalle_1, servicio)}
+            loading="lazy"
+            alt="Izquierda"
+            class="h-[350px] w-full object-cover object-center"
+        />
+      </div>
+
+      <!-- Imagen central (frontal) -->
+      <div class="relative overflow-hidden rounded-xl bg-white shadow-xl">
+        <img
+        src={imagePath(dataServicio.detalle_2, servicio)}
+          loading="lazy"
+          alt="Centro"
+          class="h-[350px] w-full object-cover object-center"
+        />
+      </div>
+
+      <!-- Imagen derecha (hacia abajo y atrás) -->
+      <div class="relative top-6 z-10 translate-x-4 scale-[0.95] overflow-hidden rounded-xl bg-gray-100 shadow-md">
+        <img
+        src={imagePath(dataServicio.detalle_3, servicio)}
+          loading="lazy"
+          alt="Derecha"
+          class="h-[350px] w-full object-cover object-center"
+        />
+      </div>
+    </div>
+</div>

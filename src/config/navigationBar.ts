@@ -28,7 +28,6 @@ export interface NavAction {
 export interface NavData {
 	logo: Logo
 	navItems: NavItem[]
-	navActions: NavAction[]
 }
 
 export const navigationBarData: NavData = {
@@ -44,12 +43,12 @@ export const navigationBarData: NavData = {
 			name: 'Nuestros servicios',
 			link: '#',
 			submenu: [
-				{ name: 'Escolar', link: '/blog' },
-				{ name: 'Bachillerato', link: '/changelog' },
-				{ name: 'Universitario', link: '/faq' }
+				{ name: 'Escolar', link: '/servicio/escolar' },
+				{ name: 'Bachillerato', link: '/servicio/bachillerato' },
+				{ name: 'Universitario', link: '/servicio/universitario' }
 			]
-		},
-		{ name: 'Contactanos', link: '/contact' }
+		}
+		/*,{ name: 'Contactanos', link: '/contact' }*/
 	]
 	//,navActions: [{ name: 'Try it now', link: '/', style: 'primary', size: 'lg' }]
 }
