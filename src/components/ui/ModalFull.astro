@@ -1,0 +1,53 @@
+---
+import Button from './Button.astro'
+import { Icon } from 'astro-icon/components'
+type Props = {
+	id: string
+	title?: string
+	classes?: string
+}
+
+const { id, title, classes } = Astro.props
+---
+
+<div {...id ? { id } : {}} class:list={['modal', { [`${classes}`]: classes }]}>
+	<div class="modal__popup">
+		<div class="modal__header">
+			{title && <h2 class="modal__title">{title}</h2>}
+			<Button size="sm" style="neutral" classes="modal__close" variation="link">
+				<Icon name="x-mark" class="dark:text-neutral-50" />
+				<span class="sr-only">Close</span>
+			</Button>						
+		</div>
+		<div class="modal__body flex-1 overflow-hidden">
+			<slot />
+		</div>
+	</div>
+</div>
+
+<style>
+	.modal {
+		@apply fixed left-0 top-0 z-30 flex h-0 w-full items-center justify-center overflow-hidden bg-white/50 lg:backdrop-blur-sm dark:bg-neutral-900/50 [&.open]:h-full;
+	}
+    /*max-w-7xl w-full h-[90vh] flex flex-col*/
+	.modal__popup {
+		@apply m-6 flex h-[95vh] w-full max-w-full translate-y-6 flex-col overflow-hidden rounded border border-neutral-100 bg-white text-neutral-500 opacity-0 shadow-xl shadow-neutral-700/5 transition-all duration-500 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-neutral-950/50 [.open_&]:translate-y-0 [.open_&]:opacity-100;
+	}
+    /**@apply flex justify-between items-center px-6 py-3 border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900; */
+	.modal__header {
+		@apply flex justify-between items-center px-6 py-3 border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900;
+	}
+	.modal__title {
+		@apply text-xl font-bold text-neutral-800 dark:text-white;
+	}
+	.modal__close {
+		@apply text-gray-500 dark:text-neutral-300 hover:text-red-500 text-xl cursor-pointer;
+	}
+    .modal__close:focus {
+        outline: 2px solid #f87171;
+        outline-offset: 2px;
+    }
+	.modal__body {
+		@apply p-6;
+	}
+</style>

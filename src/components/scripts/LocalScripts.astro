@@ -1,5 +1,30 @@
 <!-- Scripts for UI components -->
 <script async defer is:inline>
+	function openModal(modal) {
+		if (modal && modal.classList.contains('modal')) {
+			modal.classList.add('open');
+			
+			// Solo crea el iframe si no existe
+			const pdfContainer = modal.querySelector('.pdf-container');
+			const existingIframe = pdfContainer.querySelector('iframe');
+			if (!existingIframe) {
+				const src = pdfContainer.getAttribute('data-src');
+				const iframe = document.createElement('iframe');
+				iframe.src = src;
+				iframe.className = 'w-full h-full';
+				iframe.setAttribute('frameborder', '0');
+				iframe.setAttribute('allowfullscreen', '');
+				pdfContainer.appendChild(iframe);
+			}
+		}
+	}
+
+	function closeModal(modal) {
+		if (modal && modal.classList.contains('modal')) {
+		modal.classList.remove('open')
+		}
+	}
+
 	document.addEventListener('astro:page-load', () => {
 		// Menu Dropdown
 		const menuItems = document.querySelectorAll('.header__menu-item')
@@ -39,28 +64,47 @@
 		}
 
 		// Modals
-		function openModal(modal) {
+		function openModal(modal, src = '', titulo = '') {
 			if (modal && modal.classList.contains('modal')) {
-				modal.classList.add('open')
+				// Set title
+				if (titulo) {
+					const titleElement = modal.querySelector('.modal__title');
+					if (titleElement) {
+						titleElement.textContent = titulo;
+					}
+				}
+
+				// Set iframe src
+				const iframe = modal.querySelector('iframe');
+				if (iframe && src) {
+					iframe.src = src;
+				}
+
+				modal.classList.add('open');
+				console.log('Modal abierto:', titulo, src);
 			}
 		}
-		function closeModal(modal) {
-			if (modal && modal.classList.contains('modal')) {
-				modal.classList.remove('open')
-			}
-		}
+
+
 		const modalButtons = document.querySelectorAll('[data-modal]')
 
 		modalButtons.forEach(function (button) {
 			button.addEventListener('click', function () {
+				event.preventDefault(); 
 				const modalId = button.getAttribute('data-modal')
 				const modal = document.getElementById(modalId)
-				openModal(modal)
+				// ✅ Extrae los atributos personalizados
+				const src = button.getAttribute('data-src');
+    			const titulo = button.getAttribute('data-title');
+				console.log('src:', src);
+				console.log('titulo:', titulo);
+				openModal(modal, src, titulo)
 			})
 		})
 		document.querySelectorAll('.modal').forEach(function (modal) {
 			modal.addEventListener('click', function (event) {
-				if (event.target === modal) {
+				const modalContent = modal.querySelector('.modal__popup')
+				if (!modalContent.contains(event.target)) {
 					closeModal(modal)
 				}
 			})

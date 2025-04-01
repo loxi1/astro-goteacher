@@ -1,0 +1,50 @@
+---
+type Props = {
+	id: string
+	title?: string
+	src: string
+	classes?: string
+}
+
+const { id, title, src, classes } = Astro.props
+---
+
+<div id={id} class:list={['modal', { [`${classes}`]: classes }]}>
+	<div class="modal__popup max-w-7xl w-full h-[90vh] flex flex-col">
+		<div class="modal__header">
+			{title && <h2 class="modal__title">{title}</h2>}
+			<button onclick="closeModal()" type="button" class="modal__close z-100" data-modal-close>
+				<span class="icon-[tabler--x] size-5 dark:text-white" />
+				<span class="sr-only">X</span>
+			</button>						
+		</div>
+		<div class="modal__body grow p-0">
+			<iframe
+				src={src}
+				width="100%"
+				height="100%" <!-- <- importante -->
+				frameborder="0"
+				allowfullscreen
+				class="w-full h-full"
+			></iframe>
+		</div>
+	</div>
+</div>
+
+<style>
+	.modal.open {
+		@apply fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm;
+	}
+	.modal__popup {
+		@apply bg-white dark:bg-neutral-900 rounded shadow-xl overflow-hidden relative;
+	}
+	.modal__header {
+		@apply flex justify-between items-center px-6 py-3 border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900;
+	}
+	.modal__title {
+		@apply text-lg font-semibold truncate;
+	}
+	.modal__close {
+		@apply text-gray-600 dark:text-white hover:text-red-500 cursor-pointer;
+	}
+</style>
