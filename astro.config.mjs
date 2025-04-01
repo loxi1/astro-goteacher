@@ -5,10 +5,10 @@ import icon from "astro-icon";
 import react from '@astrojs/react';
 
 import sitemap from "@astrojs/sitemap";
-
+const website = 'https://astro-goteacher.pages.dev/';
 // https://astro.build/config
 export default defineConfig({
-  site: "https://foxi.netlify.app/",
+  site: website,
   integrations: [
     tailwind(),
     react(),
