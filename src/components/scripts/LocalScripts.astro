@@ -90,7 +90,6 @@
 
 		modalButtons.forEach(function (button) {
 			button.addEventListener('click', function () {
-				event.preventDefault(); 
 				const modalId = button.getAttribute('data-modal')
 				const modal = document.getElementById(modalId)
 				// ✅ Extrae los atributos personalizados
