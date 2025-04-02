@@ -1,24 +1,5 @@
 <!-- Scripts for UI components -->
 <script async defer is:inline>
-	function openModal(modal) {
-		if (modal && modal.classList.contains('modal')) {
-			modal.classList.add('open');
-			
-			// Solo crea el iframe si no existe
-			const pdfContainer = modal.querySelector('.pdf-container');
-			const existingIframe = pdfContainer.querySelector('iframe');
-			if (!existingIframe) {
-				const src = pdfContainer.getAttribute('data-src');
-				const iframe = document.createElement('iframe');
-				iframe.src = src;
-				iframe.className = 'w-full h-full';
-				iframe.setAttribute('frameborder', '0');
-				iframe.setAttribute('allowfullscreen', '');
-				pdfContainer.appendChild(iframe);
-			}
-		}
-	}
-
 	function closeModal(modal) {
 		if (modal && modal.classList.contains('modal')) {
 		modal.classList.remove('open')

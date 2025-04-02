@@ -3,14 +3,6 @@ import Layout from '../../layouts/Layout.astro'
 import Banner from '../../components/blocks/servicio/Banner.astro'
 import ListarServicio from '../../components/blocks/servicio/Servicio.astro'
 
-
-// - Page Header
-const header = {
-	title: '<strong>Nosotros</strong>.',
-	text: "Somos un grupo de egresados de la Universidad Nacional de Ingeniería que nos dedicamos a la enseñanza de las matemáticas buscando el desarrollo personal y profesional, brindamos conocimientos básicos y avanzados, dirigidos a estudiantes Escolares y Universitarios.",
-    texto: "Nuestros asesores son especialistas en cada materia de las matemáticas y transmiten sus conocimientos con facilidad para un mejor aprendizaje."
-}
-
 export function getStaticPaths() {
   return [
     {params: {servicio: 'escolar'}},
