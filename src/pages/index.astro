@@ -28,14 +28,11 @@ const SEO = {
 		data={cursos}
 	/>
 	<!-- En index.astro -->
-	<div class="text-center mt-10">
-		<button
-		type="button"
-		class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition"
-		data-modal="serviciopdf"
-		>
-		Reserva tu clase ahora
-		</button>
+	<div class="flex items-center justify-center w-16 h-16 rounded-md bg-primary-50 text-primary-500 group-hover:scale-110 transition-transform dark:bg-primary-500/10 dark:text-primary-400">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="w-8 h-8">
+			<path fill="currentColor" d="M14 2H4l5 8-5 8h12v-4h-2v2H8.2l3.8-6-3.8-6H14v2h2V2z"/>
+		</svg>
 	</div>
+	
 	<!-- En el modal -->  
 </Layout>

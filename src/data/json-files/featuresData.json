@@ -1,73 +1,73 @@
 [
 	{
 		"title": "Aritmética",
-		"icon": "chart-pie",
+		"icon": "aritmetica.svg",
 		"description": "",
 		"category": "Cursos"
 	},
 	{
 		"title": "Trigonometría",
-		"icon": "squares-plus",
+		"icon": "trigonometria.svg",
 		"description": "",
 		"category": "Cursos"
 	},
 	{
 		"title": "Razonamiento Matemático",
-		"icon": "cliboard-document-check",
+		"icon": "razo-matematico.svg",
 		"description": "",
 		"category": "Cursos"
 	},
 	{
 		"title": "Cálculo Diferencial",
-		"icon": "rocket",
+		"icon": "integrales.svg",
 		"description": "",
 		"category": "Cursos"
 	},
 	{
 		"title": "Álgebra",
-		"icon": "device-phone-mobile",
+		"icon": "algebra.svg",
 		"description": "",
 		"category": "Cursos"
 	},
 	{
 		"title": "Física",
-		"icon": "trophy",
+		"icon": "fisica.svg",
 		"description": "",
 		"category": "Cursos"
 	},
 	{
 		"title": "Estadística y Probabilidades",
-		"icon": "shield-check",
+		"icon": "estadistica-descriptiva.svg",
 		"description": "",
 		"category": "Cursos"
 	},
 	{
 		"title": "Cálculo Integral",
-		"icon": "arrow-treding-up",
+		"icon": "ecuaciones-diferenciales.svg",
 		"description": "",
 		"category": "Cursos"
 	},
 	{
 		"title": "Geometría",
-		"icon": "bell-alert",
+		"icon": "geometria.svg",
 		"description": "",
 		"category": "Cursos"
 	},
 	{
 		"title": "Química",
-		"icon": "clipboard-document-list",
+		"icon": "quimica.svg",
 		"description": "",
 		"category": "Cursos"
 	},
 	{
 		"title": "Estadística Aplicada",
-		"icon": "user-group",
+		"icon": "estadistica.svg",
 		"description": "",
 		"category": "Cursos"
 	},
 	{
 		"title": "Cálculo de variables multiples",
-		"icon": "chat-bubble-left-right",
+		"icon": "ecuaciones-diferenciales.svg",
 		"description": "",
 		"category": "Cursos"
 	},
