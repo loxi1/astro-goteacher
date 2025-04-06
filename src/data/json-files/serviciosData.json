@@ -28,7 +28,7 @@
 		"orden": 4
 	},
 	{
-		"quimica": "Quimica",
+		"titulo": "Quimica",
 		"servicio": "escolar",
 		"sylabus": "quimica.pdf",
 		"img": "quimica.jpg",

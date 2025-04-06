@@ -17,32 +17,40 @@ const {
 const imagePath = (file: string, folder: string) => `/assets/servicios/${folder}/img/${file}`;
 const pdfPath = (file: string, folder: string) => `/assets/servicios/${folder}/syllabus/${file}`;
 ---
-
-<div class="flex flex-col items-center justify-center w-full max-w-xs mx-auto">
-  <!-- Imagen como fondo redimensionado -->
-  <div
-    class="w-full h-[340px] bg-gray-300 bg-center bg-cover rounded-t-lg shadow-md"
-    style={`background-image: url('${imagePath(imagen, servicio)}')`}
-  ></div>
-
-  <!-- Contenedor de contenido -->
-  <div class="w-full bg-white dark:bg-neutral-800 shadow-lg rounded-b-lg">
-    <h3 class="py-3 font-bold text-center text-gray-800 uppercase dark:text-white text-lg tracking-wide">
-      {title}
-    </h3>
-
-    <div class="flex items-center justify-between px-4 py-3 bg-gray-100 dark:bg-neutral-700 text-sm">
-      
-      <button
-        data-src={pdfPath(sylabus, servicio)}
-        data-title={title}        
-        type="button"
-        data-modal="serviciopdf"
-        class="verpdf px-2 py-1 text-xs font-semibold text-white uppercase bg-primary-500 rounded hover:bg-primary-600"
-      >
-        Ver
-      </button>
-    </div>
+<div class="flex flex-col items-center justify-center w-full max-w-sm mx-auto rounded-xl relative group">
+  <!-- Imagen -->
+  <div class="aspect-[3/2] w-full bg-white rounded-lg shadow-md flex items-center justify-center">
+     <img
+        src={imagePath(imagen, servicio)}
+        alt={title}
+        class="max-h-full max-w-full object-contain"
+        />
   </div>
+  <!-- Contenedor inferior visual -->
+  <div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800 group-hover:ring-2 group-hover:ring-primary-500 transition-all duration-300">
+     <!-- Título centrado y truncado -->
+     <div class="flex items-center justify-center h-16 px-2 bg-neutral-100 dark:bg-neutral-700 rounded-t-lg transition-all duration-300 hover:bg-neutral-200 hover:shadow-md">
+        <h3 class="font-bold tracking-wide text-center text-neutral-700 dark:text-white text-sm truncate uppercase">
+           {title}
+        </h3>
+     </div>
+     <!-- Botón visual -->
+     <div class="flex items-center justify-center px-3 py-2  bg-gray-800 dark:bg-gray-600">
+        <span class="text-xs font-semibold text-white uppercase px-2 py-1 rounded">
+        Ver syllabus
+        </span>
+     </div>
+  </div>
+  <!-- Capa clickeable -->
+  <!-- Botón invisible que activa el modal -->
+  <button
+  data-src={pdfPath(sylabus, servicio)}
+  data-title={title}
+  data-modal="serviciopdf"
+  type="button"
+  class="absolute bottom-0 left-0 w-full h-[42px] z-10 bg-transparent text-transparent cursor-pointer hover:shadow-lg hover:-translate-y-1 transition"
+  aria-label={`Ver syllabus de ${title}`}
+  >
+  .
+  </button>
 </div>
-<!--ModalPdf id={`modal-${title.toLowerCase()}`} title={title} src={pdfPath(sylabus, servicio)} /-->

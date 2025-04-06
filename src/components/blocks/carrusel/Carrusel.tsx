@@ -41,12 +41,12 @@ const Carrusel: React.FC = () => {
                 <img
                   src={imagePath(item.elemento1, 'elementos')}
                   alt=""
-                  className="absolute bottom-10 left-5 hidden sm:block w-20 h-20"
+                  className="absolute bottom-10 left-5 hidden sm:block w-40 h-40"
                 />
                 <img
                   src={imagePath(item.elemento2, 'elementos')}
                   alt=""
-                  className="absolute top-10 -left-5 hidden sm:block w-24 h-24 -z-10"
+                  className="absolute bottom-10 right-1 hidden sm:block w-35 h-35 -z-10"
                 />
               </div>
           
@@ -95,14 +95,14 @@ const Carrusel: React.FC = () => {
                 />
                 {/* Elementos decorativos */}
                 <img
-                  src={imagePath(item.elemento1, 'elementos')}
+                  src={imagePath(item.elemento3, 'elementos')}
                   alt=""
-                  className="absolute bottom-10 right-5 hidden sm:block w-20 h-20"
+                  className="absolute bottom-10 right-5 hidden sm:block w-40 h-40"
                 />
                 <img
-                  src={imagePath(item.elemento2, 'elementos')}
+                  src={imagePath(item.elemento4, 'elementos')}
                   alt=""
-                  className="absolute top-10 left-2 hidden sm:block w-24 h-24 -z-10"
+                  className="absolute bottom-10 left-0 hidden sm:block w-35 h-35 -z-10"
                 />
               </div>
           
