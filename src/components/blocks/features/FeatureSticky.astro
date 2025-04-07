@@ -15,11 +15,9 @@ type Props = {
 	text?: string
 	data: FeatureData[]
 	classes?: string
-	servicio?: string
-	pdf?: string
 	orden?: number
 }
-const { title, text, data, classes, servicio, pdf, orden } = Astro.props
+const { title, text, data, classes } = Astro.props
 ---
 
 <StickySidebar classes={classes}>
