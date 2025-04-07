@@ -1,26 +1,57 @@
 ---
 type Props = {
-	title?: string
-	icon?: string
-	classes?: string
-	color?: string
+  title?: string
+  icon?: string
+  classes?: string
+  color?: string
+  servicio?: string
+  pdf?: string
+  orden?: number
 }
+
 const {
-	title = 'Título del feature',
-	icon = 'check-circle'
+  title = 'Título del feature',
+  icon = 'check-circle.svg',
+  servicio = '',
+  pdf = '',
+  orden = 0
 } = Astro.props
 
+const imagePath = (file: string) => `/assets/servicios/svg/${file}`;
+const pdfPath = (file: string, folder: string) => `/assets/servicios/${folder}/syllabus/${file}`;
+
+// Si se pasan ambos parámetros, se genera la URL del PDF; en caso contrario, queda vacía.
+const pdfUrl = (pdf && servicio) ? pdfPath(pdf, servicio) : '';
+
+// Generar IDs únicos para el contenedor y el botón oculto
+const divId = `${servicio}-${orden}`;
+const btnId = `${servicio}-${orden}-btn`;
+const tabindex = orden - 1;
 ---
 
 <div
-	class="group flex items-center gap-4 p-4 rounded-xl border border-neutral-200 bg-white hover:shadow-md hover:-translate-y-1 transition-all duration-300 dark:border-neutral-700 dark:bg-neutral-800"
+  id={divId}
+  orden={orden}
+  servicio={servicio}
+  tabindex={tabindex}
+  onclick={`event.preventDefault(); document.getElementById('${btnId}')?.click();`}
+  class="group flex items-center gap-4 p-4 rounded-xl border border-neutral-200 bg-white hover:shadow-md hover:-translate-y-1 transition-all duration-300 dark:border-neutral-700 dark:bg-neutral-800 cursor-pointer"
 >
-	<div class="flex items-center justify-center w-16 h-16 rounded-md bg-primary-50 text-primary-500 group-hover:scale-110 transition-transform dark:bg-primary-500/10 dark:text-primary-400">
-		<img src={`/assets/servicios/svg/${icon}`} alt={title} class="h-12 w-12 dark:invert" />
-	</div>
-	<span class="text-base font-semibold text-neutral-700 dark:text-white">
-		{title}
-	</span>
+  <div class="flex items-center justify-center w-16 h-16 rounded-md bg-primary-50 text-primary-500 group-hover:scale-110 transition-transform dark:bg-primary-500/10 dark:text-primary-400">
+    <img src={imagePath(icon)} alt={title} class="h-12 w-12 dark:invert" />
+  </div>
+  <span class="text-base font-semibold text-neutral-700 dark:text-white">
+    {title}
+  </span>
 </div>
-
-
+<button 
+  id={btnId} 
+  data-src={pdfUrl} 
+  data-title={title}
+  data-description="Constancia de estudios de Gabriel"
+  aria-label={`Constancia de estudios de ${title}`} 
+  data-modal="serviciopdf"
+  type="button" 
+  class="hidden"
+>
+</button>

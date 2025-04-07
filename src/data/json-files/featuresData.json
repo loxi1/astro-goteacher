@@ -2,229 +2,109 @@
 	{
 		"title": "Aritmética",
 		"icon": "aritmetica.svg",
+		"pdf": "aritmetica.pdf",
+		"servicio": "escolar",
 		"description": "",
-		"category": "Cursos"
+		"category": "Cursos",
+		"orden": 1
 	},
 	{
 		"title": "Trigonometría",
 		"icon": "trigonometria.svg",
+		"pdf": "trigonometria.pdf",
+		"servicio": "escolar",
 		"description": "",
-		"category": "Cursos"
+		"category": "Cursos",
+		"orden": 4
 	},
 	{
 		"title": "Razonamiento Matemático",
 		"icon": "razo-matematico.svg",
+		"pdf": "razonamiento-matematico.pdf",
+		"servicio": "escolar",
 		"description": "",
-		"category": "Cursos"
+		"category": "Cursos",
+		"orden": 7
 	},
 	{
 		"title": "Cálculo Diferencial",
 		"icon": "integrales.svg",
+		"pdf": "calculo-I.pdf",
+		"servicio": "universitario",
 		"description": "",
-		"category": "Cursos"
+		"category": "Cursos",
+		"orden": 10
 	},
 	{
 		"title": "Álgebra",
 		"icon": "algebra.svg",
+		"pdf": "algebra.pdf",
+		"servicio": "escolar",
 		"description": "",
-		"category": "Cursos"
+		"category": "Cursos",
+		"orden": 2
 	},
 	{
 		"title": "Física",
 		"icon": "fisica.svg",
+		"pdf": "fisica.pdf",
+		"servicio": "escolar",
 		"description": "",
-		"category": "Cursos"
+		"category": "Cursos",
+		"orden": 5
 	},
 	{
 		"title": "Estadística y Probabilidades",
 		"icon": "estadistica-descriptiva.svg",
+		"pdf": "estadistica-y-probabilidades.pdf",
+		"servicio": "escolar",
 		"description": "",
-		"category": "Cursos"
+		"category": "Cursos",
+		"orden": 8
 	},
 	{
 		"title": "Cálculo Integral",
 		"icon": "ecuaciones-diferenciales.svg",
+		"pdf": "calculo-II.pdf",
+		"servicio": "universitario",
 		"description": "",
-		"category": "Cursos"
+		"category": "Cursos",
+		"orden": 11
 	},
 	{
 		"title": "Geometría",
 		"icon": "geometria.svg",
+		"pdf": "geometria.pdf",
+		"servicio": "escolar",
 		"description": "",
-		"category": "Cursos"
+		"category": "Cursos",
+		"orden": 3
 	},
 	{
 		"title": "Química",
 		"icon": "quimica.svg",
+		"pdf": "quimica.pdf",
+		"servicio": "escolar",
 		"description": "",
-		"category": "Cursos"
+		"category": "Cursos",
+		"orden": 6
 	},
 	{
 		"title": "Estadística Aplicada",
 		"icon": "estadistica.svg",
+		"pdf": "estadistica-inferencial.pdf",
+		"servicio": "universitario",
 		"description": "",
-		"category": "Cursos"
+		"category": "Cursos",
+		"orden": 9
 	},
 	{
 		"title": "Cálculo de variables multiples",
 		"icon": "ecuaciones-diferenciales.svg",
+		"pdf": "calculo-III.pdf",
+		"servicio": "universitario",
 		"description": "",
-		"category": "Cursos"
-	},
-	{
-		"title": "Multi-Device Sync",
-		"icon": "computer-desktop",
-		"description": "Ensure seamless access to your data across all devices. Sync your information in real-time, so you can work from anywhere with consistency.",
-		"category": "Cursoss"
-	},
-	{
-		"title": "Customizable Alerts",
-		"icon": "bell",
-		"description": "Set up customizable alerts to notify you of important events and changes. Tailor notifications to your needs for better management and response.",
-		"category": "Cursoss"
-	},
-	{
-		"title": "API Integrations",
-		"icon": "arrow-path-rounded-square",
-		"description": "Integrate with other systems and services using our flexible API. Expand functionality and connect with external tools effortlessly.",
-		"category": "Integrations"
-	},
-	{
-		"title": "User Role Management",
-		"icon": "user",
-		"description": "Manage user roles and permissions with ease. Control access levels and ensure the right people have the right permissions for your project.",
-		"category": "Cursoss"
-	},
-	{
-		"title": "Custom Themes",
-		"icon": "paint-brush",
-		"description": "Customize the look and feel of your workspace with custom themes. Choose from various design options to match your brand's style.",
-		"category": "Cursoss"
-	},
-	{
-		"title": "Data Backup",
-		"icon": "circle-stack",
-		"description": "Protect your data with regular backups. Ensure that your information is safe and recoverable in case of unexpected issues or data loss.",
-		"category": "Cursoss"
-	},
-	{
-		"title": "Performance Tracking",
-		"icon": "arrow-trending-up",
-		"description": "Monitor and track performance metrics to ensure optimal efficiency. Use performance data to make informed decisions and improvements.",
-		"category": "Curssos"
-	},
-	{
-		"title": "Interactive Tutorials",
-		"icon": "document-chart-bar",
-		"description": "Access interactive tutorials to get the most out of our features. Learn new skills and improve your proficiency with guided, hands-on experiences.",
-		"category": "Curssos"
-	},
-	{
-		"title": "Custom Widgets",
-		"icon": "squares-plus",
-		"description": "Enhance your dashboard with custom widgets. Add and configure widgets to display the most relevant information for your needs.",
-		"category": "Cursoss"
-	},
-	{
-		"title": "Data Visualization",
-		"icon": "eye",
-		"description": "Visualize your data with advanced charting and graphing tools. Create insightful visual representations to better understand your metrics.",
-		"category": "Curssos"
-	},
-	{
-		"title": "Integration Marketplace",
-		"icon": "shopping-cart",
-		"description": "Explore our marketplace for additional integrations and plugins. Extend the functionality of your platform with third-party solutions.",
-		"category": "Integrations"
-	},
-	{
-		"title": "Onboarding Assistance",
-		"icon": "user",
-		"description": "Get personalized onboarding assistance to help you set up and start using our platform effectively. Benefit from expert guidance to ensure a smooth start.",
-		"category": "Curssos"
-	},
-	{
-		"title": "Knowledge Base",
-		"icon": "document-text",
-		"description": "Access a comprehensive knowledge base with articles, guides, and FAQs. Find answers to common questions and learn how to make the most of our features.",
-		"category": "Cursoss"
-	},
-	{
-		"title": "Live Chat Cursos",
-		"icon": "chat-bubble-left-ellipsis",
-		"description": "Connect with our Cursos team via live chat for immediate assistance. Get answers to your questions and resolve issues in real time.",
-		"category": "Cursoss"
-	},
-	{
-		"title": "Customizable Workspaces",
-		"icon": "cursor-arrow-ripple",
-		"description": "Personalize your workspace layout to fit your needs. Adjust and configure your workspace for maximum efficiency and comfort.",
-		"category": "Curssos"
-	},
-	{
-		"title": "Task Automation",
-		"icon": "rectangle-stack",
-		"description": "Automate routine tasks to improve efficiency and reduce manual work. Set up automated processes to streamline your workflow.",
-		"category": "Cursoss"
-	},
-	{
-		"title": "Accessibility Features",
-		"icon": "eye-slash",
-		"description": "Explore features designed to enhance accessibility. Ensure your tools and workspace are usable for all team members, including those with disabilities.",
-		"category": "Curssos"
-	},
-	{
-		"title": "Enhanced Mobile Access",
-		"icon": "mobile",
-		"description": "Benefit from enhanced mobile access features. Use our app to stay connected and productive with improved functionality on mobile devices.",
-		"category": "Curssos"
-	},
-	{
-		"title": "Advanced Bug Tracking",
-		"icon": "bug-ant",
-		"description": "Track tasks and projects with advanced tracking features. Monitor progress, set milestones, and manage your projects more effectively.",
-		"category": "Curssos"
-	},
-	{
-		"title": "Comprehensive Balancer",
-		"icon": "scale",
-		"description": "Access comprehensive Cursos resources to assist users at all levels. From troubleshooting to advanced tips, get the help you need.",
-		"category": "Cursoss"
-	},
-	{
-		"title": "Voice Recordings",
-		"icon": "microphone",
-		"description": "Receive real-time updates on accessibility features and improvements. Stay informed about changes that impact your mobile and web access.",
-		"category": "Cursoss"
-	},
-	{
-		"title": "User Identity Verification",
-		"icon": "identification",
-		"description": "Analyze Cursos metrics to optimize performance. Gain insights into team and individual Cursos to drive improvements.",
-		"category": "Cursoss"
-	},
-	{
-		"title": "Payment Integrations",
-		"icon": "credit-card",
-		"description": "Communicate directly within the app using in-app messaging. Keep conversations organized and accessible without switching between tools.",
-		"category": "Integrations"
-	},
-	{
-		"title": "Transparent API ",
-		"icon": "cube-transparent",
-		"description": "Seamlessly integrate with third-party APIs to extend the functionality of your app. Enjoy smooth data exchange and enhanced performance.",
-		"category": "Integrations"
-	},
-	{
-		"title": "Clever CRM Integration",
-		"icon": "light-bulb",
-		"description": "Connect your app with popular CRM systems to streamline customer management. Synchronize data and improve customer relationship processes.",
-		"category": "Integrations"
-	},
-	{
-		"title": "API key Integration",
-		"icon": "key",
-		"description": "Integrate multiple payment gateways to offer diverse payment options. Ensure secure transactions and smooth payment processing for users.",
-		"category": "Integrations"
+		"category": "Cursos",
+		"orden": 12
 	}
 ]

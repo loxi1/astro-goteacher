@@ -6,14 +6,20 @@ type FeatureData = {
 	title: string
 	icon: string
 	description: string
+	servicio: string
+	pdf: string
+	orden: number
 }
 type Props = {
 	title: string
 	text?: string
 	data: FeatureData[]
 	classes?: string
+	servicio?: string
+	pdf?: string
+	orden?: number
 }
-const { title, text, data, classes } = Astro.props
+const { title, text, data, classes, servicio, pdf, orden } = Astro.props
 ---
 
 <StickySidebar classes={classes}>
@@ -24,9 +30,17 @@ const { title, text, data, classes } = Astro.props
 
 	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 		{data.map((feature: FeatureData) => (
-			<Feature title={feature.title} icon={feature.icon} color="indigo">
-				{feature.description}
+			<Feature 
+			  title={feature.title} 
+			  orden={feature.orden} 
+			  icon={feature.icon} 
+			  color="indigo" 
+			  servicio={feature.servicio} 
+			  pdf={feature.pdf}
+			>
+			  {feature.description}
 			</Feature>
-		))}
+		  ))}
+		  
 	</div>
 </StickySidebar>
