@@ -72,11 +72,11 @@ export const footerNavigationData: FooterData = {
 			]
 		}
 		/*,{
-			category: 'Contacto',
+			category: 'Correos',
 			subCategories: [
 				{
-					subCategory: 'Contactanos',
-					subCategoryLink: '/contact'
+					subCategory: 'informes@goteacherperu.com',
+					icon: '/contact'
 				},
 				{
 					subCategory: 'Support',

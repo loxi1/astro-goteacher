@@ -5,7 +5,7 @@ import icon from "astro-icon";
 import react from '@astrojs/react';
 
 import sitemap from "@astrojs/sitemap";
-const website = 'https://astro-goteacher.pages.dev/';
+const website = 'https://goteacherperu.com/';
 // https://astro.build/config
 export default defineConfig({
   site: website,
