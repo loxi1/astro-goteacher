@@ -46,7 +46,7 @@ const Carrusel: React.FC = () => {
                 <img
                   src={imagePath(item.elemento2, 'elementos')}
                   alt=""
-                  className="absolute bottom-10 right-1 hidden sm:block w-35 h-35 -z-10"
+                  className="absolute bottom-0 right-0 hidden sm:block w-35 h-35 -z-10"
                 />
               </div>
           
@@ -102,7 +102,7 @@ const Carrusel: React.FC = () => {
                 <img
                   src={imagePath(item.elemento4, 'elementos')}
                   alt=""
-                  className="absolute bottom-10 left-0 hidden sm:block w-35 h-35 -z-10"
+                  className="absolute bottom-0 left-0 hidden sm:block w-35 h-35 -z-10"
                 />
               </div>
           
