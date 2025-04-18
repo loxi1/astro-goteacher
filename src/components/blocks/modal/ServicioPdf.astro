@@ -1,27 +1,47 @@
 ---
-// Signup Modal
-// ------------
-// Description: A modal with a form to sign up.
-
-// Components
-// - UI
 import Modal from '../../ui/ModalFull.astro'
 
-// Props
-type Props = {
-	classes?: string
+interface Props {
+  classes?: string;
+  file?: string;
+  folder?: string;
+  title?: string;
 }
-const pdfPath = (file: string, folder: string) => `/assets/servicios/${folder}/syllabus/${file}`;
-const { classes } = Astro.props
+
+const {
+  classes = '',
+  file = 'algebra.pdf',
+  folder = 'escolar',
+  title = 'PDF Viewer'
+} = Astro.props;
+
+const pdfUrl = `/assets/servicios/${folder}/syllabus/${file}`;
+const googleViewer = `https://docs.google.com/gview?embedded=true&url=https://goteacherperu.com${pdfUrl}`;
 ---
 
-<Modal id="serviciopdf" classes={classes} title="Servicio PDF">
-	<iframe
-        src={pdfPath('algebra.pdf', 'escolar')}
-        title="PDF Viewer"
-        width="100%"
-        height="500px"
-        allowfullscreen
-        class="w-full h-full"
-    ></iframe>
+<Modal id="serviciopdf" classes={classes} title={title}>
+  <script is:inline>
+    function isAndroidOrMobile() {
+      const ua = navigator.userAgent.toLowerCase();
+      return /android|iphone|ipad|ipod/.test(ua);
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const iframe = document.getElementById('pdf-viewer');
+      if (iframe) {
+        const useGoogle = isAndroidOrMobile();
+        iframe.src = useGoogle ? iframe.dataset.google : iframe.dataset.direct;
+      }
+    });
+  </script>
+
+  <iframe
+    id="pdf-viewer"
+    data-direct={pdfUrl}
+    data-google={googleViewer}
+    title={title}
+    width="100%"
+    height="500px"
+    allowfullscreen
+    class="w-full h-full"
+  ></iframe>
 </Modal>
