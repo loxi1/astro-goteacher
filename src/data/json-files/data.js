@@ -42,7 +42,7 @@ export const carrusel = {
 			"elemento1": "elemento-molecular.svg",
 			"elemento2": "flecha-abajo-derecha.svg",
 			"elemento3": "elemento-sol.svg",
-			"elemento4": "flecha-abajo-izquierda.svg",
+			"elemento4": "flecha-abajo.svg",
 			"categoria": "bachillerato",
 			"detalle_1": "bachillerato-1.webp",
 			"detalle_2": "bachillerato-2.webp",
