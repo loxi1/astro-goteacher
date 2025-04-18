@@ -40,7 +40,7 @@ export const carrusel = {
 			"image": "bachillerato-estudiando.png",
 			"image_2": "bachillerato-laboratorio.png",
 			"elemento1": "elemento-molecular.svg",
-			"elemento2": "flecha-abajo-derecha_.svg",
+			"elemento2": "flecha-abajo-derecha.svg",
 			"elemento3": "elemento-sol.svg",
 			"elemento4": "flecha-abajo-izquierda.svg",
 			"categoria": "bachillerato",
