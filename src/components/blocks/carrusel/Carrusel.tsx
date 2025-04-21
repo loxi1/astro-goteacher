@@ -1,24 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { carrusel } from '../../../data/json-files/data.js';
 import './style.css';
 
 const Carrusel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const totalSlides = carrusel.imagenes.length;
+  const [isTransitioning, setIsTransitioning] = useState(false); // Para evitar transiciones interrumpidas
+  const autoSlideInterval = 8000; // Intervalo de tiempo para el auto avance en ms (ej: 8 segundos)
 
   const changeSlide = (newIndex: number) => {
-    if (!document.startViewTransition) {
+    if (isTransitioning) return; // Evitar cambios mientras la transición está en curso
+    setIsTransitioning(true);
+
+    const updateIndex = () => {
       setCurrentIndex(newIndex);
+      setIsTransitioning(false);
+    };
+
+    if (!document.startViewTransition) {
+      updateIndex();
       return;
     }
 
-    document.startViewTransition(() => setCurrentIndex(newIndex));
+    document.startViewTransition(updateIndex);
   };
 
   const nextSlide = () => changeSlide((currentIndex + 1) % totalSlides);
   const prevSlide = () => changeSlide((currentIndex - 1 + totalSlides) % totalSlides);
 
   const imagePath = (file: string, folder: string) => `/assets/${folder}/${file}`;
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      nextSlide();
+    }, autoSlideInterval);
+
+    // Limpiar el intervalo cuando el componente se desmonta para evitar fugas de memoria
+    return () => clearInterval(intervalId);
+  }, [currentIndex, totalSlides, nextSlide]); // Dependencias para que el efecto se reactive si cambian
 
   return (
     <div className="relative w-full overflow-hidden">
@@ -27,9 +46,9 @@ const Carrusel: React.FC = () => {
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {carrusel.imagenes.map((item, index) => (
-            <section key={index} className="w-full lg:h-[80vh] md:h-[80vh] flex-shrink-0 flex items-center justify-center overflow-hidden">
+          <section key={index} className="w-full lg:h-[80vh] md:h-[80vh] flex-shrink-0 flex items-center justify-center overflow-hidden">
             <div className="flex w-full h-full items-center justify-between">
-          
+
               {/* Imagen izquierda */}
               <div className="md:w-1/3 lg:w-1/3 sm:w-1/2 h-full relative">
                 <img
@@ -49,7 +68,7 @@ const Carrusel: React.FC = () => {
                   className="absolute bottom-0 right-0 hidden sm:block w-35 h-35 -z-10"
                 />
               </div>
-          
+
               {/* Contenido centrado */}
               <div className="md:w-1/3 lg:w-1/3 sm:w-1/2 px-6 flex flex-col items-start justify-center text-left space-y-4 h-full">
                 <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900">{item.titulo}</h1>
@@ -71,15 +90,15 @@ const Carrusel: React.FC = () => {
                     Ver {item.subtitulo}
                   </span>
                 </a>
-                
+
                 <a
-                    href="#reserva"
-                    className="hidden px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition shadow-md"
-                  >
-                    Reserva tu clase ahora
-                  </a>
+                  href="#reserva"
+                  className="hidden px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition shadow-md"
+                >
+                  Reserva tu clase ahora
+                </a>
               </div>
-          
+
               {/* Imagen derecha */}
               <div className="lg:w-1/3 md:w-1/3 lg:block h-full relative hidden md:block">
                 <img
@@ -99,17 +118,17 @@ const Carrusel: React.FC = () => {
                   className="absolute bottom-0 left-0 hidden sm:block w-35 h-35 -z-10"
                 />
               </div>
-          
+
             </div>
           </section>
-          
+
         ))}
       </div>
 
       {/* Botones de navegación */}
       <button
         className="absolute top-1/2 left-2 -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full hover:bg-red-500 z-20"
-        aria-label='Anerior imagen'
+        aria-label='Anterior imagen'
         onClick={prevSlide}
       >
         ◀
@@ -126,16 +145,16 @@ const Carrusel: React.FC = () => {
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
         {carrusel.imagenes.map((_, index) => (
           <button
-          key={index}
-          className={`sm:w-4 sm:h-4 w-3.5 h-3.5 rounded-full ring-1 ring-white shadow-md transition-all duration-300 ${
-            index === currentIndex
-              ? 'bg-primary-500 scale-125'
-              : 'bg-neutral-400 hover:bg-neutral-500'
-          }`}          
-          onClick={() => changeSlide(index)}
-          type="button"
-        />
-        
+            key={index}
+            className={`sm:w-4 sm:h-4 w-3.5 h-3.5 rounded-full ring-1 ring-white shadow-md transition-all duration-300 ${
+              index === currentIndex
+                ? 'bg-primary-500 scale-125'
+                : 'bg-neutral-400 hover:bg-neutral-500'
+            }`}
+            onClick={() => changeSlide(index)}
+            type="button"
+          />
+
         ))}
       </div>
 
