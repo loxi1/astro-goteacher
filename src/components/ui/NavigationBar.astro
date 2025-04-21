@@ -34,8 +34,7 @@ function isActivePath(currentPath: string): boolean {
         <nav aria-label="main navigation" role="navigation" class="header__nav">
             <div class="header__logo-container">
                 <a href="/" class="header__logo">
-                    <img src={logo.src} alt={logo.alt} width="30" height="30" />
-                    <span>{logo.text}</span>
+                    <img src={logo.src} alt={logo.alt} class="header__logo-image" />
                 </a>
                 <a href="tel:+51917584188" class="header__logo-mobile-number">
                     <svg class="h-7 w-7 dark:invert" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -129,6 +128,9 @@ function isActivePath(currentPath: string): boolean {
     .header__logo {
         @apply flex items-center gap-2 whitespace-nowrap py-3 font-headings text-2xl font-black tracking-wider focus:outline-none;
     }
+    .header__logo-image {
+        @apply dark:invert h-24 w-auto object-cover object-center;
+    }
     .header__logo-mobile-number {
         @apply ml-2 font-bold text-neutral-700 flex items-center justify-center dark:text-neutral-50; /* Centrar el texto y el icono */
         text-decoration: none;
@@ -145,8 +147,12 @@ function isActivePath(currentPath: string): boolean {
     /* Estilo para pantallas pequeñas (móviles) - hasta el breakpoint 'sm' de Tailwind (640px) */
     @media (max-width: 639px) {
         .header__logo-mobile-number {
-            font-size: 1.6rem; /* Tamaño grande para móviles */
+            font-size: 1.3rem; /* Tamaño grande para móviles */
         }
+        .header__logo-image {
+            @apply h-20; /* Ajusta el tamaño de la imagen del logo para móviles */
+        }
+
     }
 
     /* Estilo para pantallas medianas y grandes (no móviles) - desde el breakpoint 'sm' de Tailwind (640px) */
