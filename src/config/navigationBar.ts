@@ -5,6 +5,7 @@ export interface Logo {
 	src: string
 	alt: string
 	text: string
+	favicon: string
 }
 
 export interface NavSubItem {
@@ -34,7 +35,8 @@ export const navigationBarData: NavData = {
 	logo: {
 		src: '/logo.svg',
 		alt: 'GoTeacher',
-		text: 'GoTeacher.'
+		text: 'GoTeacher.',
+		favicon: '/favicon.svg'
 	},
 	navItems: [
 		{ name: 'Inicio', link: '/' },
