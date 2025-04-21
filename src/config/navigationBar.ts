@@ -33,12 +33,12 @@ export interface NavData {
 export const navigationBarData: NavData = {
 	logo: {
 		src: '/logo.svg',
-		alt: 'The tailwind astro theme',
+		alt: 'GoTeacher',
 		text: 'GoTeacher.'
 	},
 	navItems: [
 		{ name: 'Inicio', link: '/' },
-		{ name: 'Quienens somos', link: '/nosotros' },
+		{ name: 'Quienes somos', link: '/nosotros' },
 		{
 			name: 'Nuestros servicios',
 			link: '#',

@@ -21,13 +21,12 @@ export interface Config {
 }
 
 export const configData: Config = {
-	siteTitle: 'Foxi. Tailwind CSS Astro Starter Kit by Oxygenna',
-	siteDescription:
-		'Foxi is a design and development agency that specializes in creating beautiful and functional websites.',
-	ogImage: '/og.jpg',
+	siteTitle: 'Grupo de estudio Goteacher a tu Nivel',
+	siteDescription: 'Somos un grupo de egresados de la Universidad Nacional de Ingeniería que nos dedicamos a la enseñanza de las matemáticas buscando el desarrollo personal y profesional, brindamos conocimientos básicos y avanzados, dirigidos a estudiantes Escolares y Universitarios.',
+	ogImage: '/og.png',
 	logo: {
 		src: '/logo.svg',
-		alt: 'Foxi. logo'
+		alt: 'GoTeacher. logo'
 	},
 	canonical: true,
 	noindex: false,

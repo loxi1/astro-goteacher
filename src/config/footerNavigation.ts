@@ -40,7 +40,7 @@ export const footerNavigationData: FooterData = {
 			'Somos un grupo de estudio academico que nos dedicamos a la enseñanza de las matemáticas buscando el desarrollo personal de nuestros estudiantes, brindamos conocimientos básicos y avanzados, dirigidos a estudiantes escolares y universitarios.',
 		logo: {
 			src: '/logo.svg',
-			alt: 'The tailwind astro theme',
+			alt: 'Grupo de estduio GoTeacher',
 			text: 'GoTeacher.'
 		}
 	},
