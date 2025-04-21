@@ -25,7 +25,7 @@ export const configData: Config = {
 	siteDescription: 'Somos un grupo de egresados de la Universidad Nacional de Ingeniería que nos dedicamos a la enseñanza de las matemáticas buscando el desarrollo personal y profesional, brindamos conocimientos básicos y avanzados, dirigidos a estudiantes Escolares y Universitarios.',
 	ogImage: '/og.png',
 	logo: {
-		src: '/logo.svg',
+		src: '/favicon.svg',
 		alt: 'GoTeacher. logo'
 	},
 	canonical: true,

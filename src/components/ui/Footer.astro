@@ -22,10 +22,10 @@ const { footerAbout, footerColumns, subFooter } = footerNavigationData
 			<div class="footer__cols">
 				<div class="footer__col">
 					<a aria-label="webiste logo" aria-current="page" class="footer__main-brand" href="/">
-						<img src={footerAbout.logo.src} alt={footerAbout.logo.alt} width="32" height="32" />
-						{footerAbout.logo.text}
+						<img src={footerAbout.logo.src} alt={footerAbout.logo.alt} class="header__logo-image"/>
+						<span class="hidden">{footerAbout.logo.text}</span>
 					</a>
-					<p>
+					<p class="text-neutral-500 dark:text-neutral-400 text-lg">
 						{footerAbout.aboutText}
 					</p>
 				</div>
@@ -52,7 +52,7 @@ const { footerAbout, footerColumns, subFooter } = footerNavigationData
 			<div class="footer__sub-cols">
 				<div class="footer__sub-col">{subFooter.copywriteText}</div>
 				<nav aria-labelledby="footer-social-links-dark" class="footer__sub-col text-right">
-					<h2 class="sr-only" id="footer-social-links-dark">Social Media Links</h2>
+					<h2 class="sr-only" id="footer-social-links-dark">Redes sociales</h2>
 					<ul>
 						{
 							socialLinks.map((social) => (
@@ -78,10 +78,10 @@ const { footerAbout, footerColumns, subFooter } = footerNavigationData
 		@apply transition-colors duration-300 hover:text-primary-500 focus:text-primary-600;
 	}
 	.footer__main {
-		@apply border-t border-neutral-100 bg-neutral-50 pb-12 pt-16 text-sm dark:border-neutral-900 dark:bg-neutral-950 [&_li]:mb-2 [&_li]:leading-6;
+		@apply border-t border-neutral-100 bg-neutral-50 pb-12 pt-16 text-lg dark:border-neutral-900 dark:bg-neutral-950 [&_li]:mb-2 [&_li]:leading-6;
 	}
 	.footer__main h3 {
-		@apply mb-6 text-base font-medium leading-8 text-neutral-700 dark:text-neutral-50;
+		@apply mb-6 text-lg font-medium leading-8 text-neutral-700 dark:text-neutral-50;
 	}
 	.footer__main-brand {
 		@apply mb-6 flex items-center gap-2 whitespace-nowrap font-headings text-xl font-bold leading-6 text-neutral-700 focus:outline-none dark:text-neutral-50;
@@ -95,7 +95,7 @@ const { footerAbout, footerColumns, subFooter } = footerNavigationData
 	}
 
 	.footer__col {
-		@apply col-span-2 first:col-span-4 md:col-span-4 md:first:col-span-8 lg:col-span-2 lg:first:col-span-6 lg:first:max-w-96;
+		@apply col-span-2 first:col-span-8 md:col-span-4 md:first:col-span-8 lg:col-span-2 lg:first:col-span-6 lg:first:max-w-96;
 	}
 	.footer__sub {
 		@apply border-t border-neutral-200 bg-neutral-100 py-4 text-sm text-neutral-600 dark:border-neutral-900 dark:bg-neutral-800/50 dark:text-neutral-400;
@@ -113,4 +113,13 @@ const { footerAbout, footerColumns, subFooter } = footerNavigationData
 	.footer__sub-col {
 		@apply col-span-2 md:col-span-4 lg:col-span-6;
 	}
+	.header__logo-image {
+        @apply dark:invert h-28 w-auto object-cover object-center;
+    }
+	/* Estilo para pantallas pequeñas (móviles) - hasta el breakpoint 'sm' de Tailwind (640px) */
+    @media (max-width: 639px) {
+        .header__logo-image {
+            @apply h-32; /* Ajusta el tamaño de la imagen del logo para móviles */
+        }
+    }
 </style>

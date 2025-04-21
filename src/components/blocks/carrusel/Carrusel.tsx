@@ -59,28 +59,22 @@ const Carrusel: React.FC = () => {
                 <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 dark:text-white">
                   {item.descripcion}
                 </p>
-                <a
-                  href="#"
-                  className="mt-4 text-white hover:text-white inline-flex items-center px-6 py-3 bg-red-500 rounded-lg hover:bg-red-600 transition"
-                >
-                  Más información
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+                <a className="group relative inline-block focus:ring-3 focus:outline-hidden dark:invert" key={index} // Es importante añadir una key cuando mapeas elementos
+                  href={`/servicio/${item.subtitulo.toLowerCase()}`}>
+                  <span
+                    className="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-yellow-300 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"
+                  ></span>
+
+                  <span
+                    className="relative inline-block border-2 border-current px-8 py-3 text-sm font-bold tracking-widest text-black uppercase"
                   >
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                  </svg>
+                    Ver {item.subtitulo}
+                  </span>
                 </a>
+                
                 <a
                     href="#reserva"
-                    className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition shadow-md"
+                    className="hidden px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition shadow-md"
                   >
                     Reserva tu clase ahora
                   </a>

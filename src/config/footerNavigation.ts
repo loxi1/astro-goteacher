@@ -70,9 +70,18 @@ export const footerNavigationData: FooterData = {
 					subCategoryLink: '/'
 				}
 			]
+		},
+		{
+			category: 'Inicio',
+			subCategories: [
+				{
+					subCategory: 'Inicio',
+					subCategoryLink: '/'
+				}
+			]
 		}
 		/*,{
-			category: 'Correos',
+			category: 'Inicio',
 			subCategories: [
 				{
 					subCategory: 'informes@goteacherperu.com',
@@ -90,6 +99,6 @@ export const footerNavigationData: FooterData = {
 		}*/
 	],
 	subFooter: {
-		copywriteText: '© GoTeacher 2025.'
+		copywriteText: `© GoTeacher ${new Date().getFullYear()}.`,
 	}
 }
