@@ -1,17 +1,18 @@
 ---
-// Google Tag Manager head script
-import { googleTagManagerID } from '../../config/analytics'
+// Google Analytics Script (gtag.js)
+import { googleAnalyticsMeasurementID } from '../../config/analytics'
 ---
 
-{
-	googleTagManagerID && (
-		<noscript>
-			<iframe
-				src={`https://www.googletagmanager.com/ns.html?id=${googleTagManagerID}`}
-				height="0"
-				width="0"
-				style="display:none;visibility:hidden"
-			/>
-		</noscript>
-	)
-}
+{googleAnalyticsMeasurementID && (
+  <>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsMeasurementID}`} is:inline></script>
+    <script is:inline>
+      {Astro.raw(`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${googleAnalyticsMeasurementID}');
+      `)}
+    </script>
+  </>
+)}
